@@ -4,11 +4,11 @@ import sys
 
 class BlochEquationsSolver:
     
-    def __init__(self, gamma, time_array, time_step, M_0, B):
+    def __init__(self, gamma, time_array, time_step, M0, B):
         self.gamma = gamma
         self.time_array = time_array
         self.time_step = time_step
-        self.M_0 = M_0
+        self.M0 = M0
         self.B = B
         self.check_length()
         Mx, My, Mz = self.runge_kutta_solver()
@@ -47,9 +47,9 @@ class BlochEquationsSolver:
         My = np.zeros([t_l])
         Mz = np.zeros([t_l])
 
-        Mx[0] = self.M_0[0]
-        My[0] = self.M_0[1]
-        Mz[0] = self.M_0[2]
+        Mx[0] = self.M0[0]
+        My[0] = self.M0[1]
+        Mz[0] = self.M0[2]
         for i in range(1, t_l):
             k1 = time_step*self.be_dMx_dt(My[i-1], Mz[i-1], By[i-1], Bz[i-1])
             m1 = time_step*self.be_dMy_dt(Mx[i-1], Mz[i-1], Bx[i-1], Bz[i-1])
