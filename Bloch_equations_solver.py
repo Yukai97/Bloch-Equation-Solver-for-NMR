@@ -4,12 +4,12 @@ import sys
 
 class BlochEquationsSolver:
     
-    def __init__(self, gamma, time_array, time_step, Mx_0, My_0, Mz_0, Bx, By, Bz):
+    def __init__(self, gamma, time_array, time_step, M_0, B):
         self.gamma = gamma
         self.time_array = time_array
         self.time_step = time_step
-        self.M_0 = np.array([Mx_0, My_0, Mz_0])
-        self.B = np.array([Bx, By, Bz])
+        self.M_0 = M_0
+        self.B = B
         self.check_length()
         Mx, My, Mz = self.runge_kutta_solver()
         self.M = [Mx, My, Mz]

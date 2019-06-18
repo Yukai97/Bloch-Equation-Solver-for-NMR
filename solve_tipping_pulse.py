@@ -58,9 +58,9 @@ Bx = bx_ne + bx_he + bx_xe
 By = np.zeros(len(time_array))
 Bz = B0 * np.ones(len(time_array))
 
-ne_bes = BlochEquationsSolver(gamma_Ne, time_array, time_step, Ne_Mx0, Ne_My0, Ne_Mz0, Bx, By, Bz)
-he_bes = BlochEquationsSolver(gamma_He, time_array, time_step, He_Mx0, He_My0, He_Mz0, Bx, By, Bz)
-xe_bes = BlochEquationsSolver(gamma_Xe, time_array, time_step, Xe_Mx0, Xe_My0, Xe_Mz0, Bx, By, Bz)
+ne_bes = BlochEquationsSolver(gamma_Ne, time_array, time_step, [Ne_Mx0, Ne_My0, Ne_Mz0], [Bx, By, Bz])
+he_bes = BlochEquationsSolver(gamma_He, time_array, time_step, [He_Mx0, He_My0, He_Mz0], [Bx, By, Bz])
+xe_bes = BlochEquationsSolver(gamma_Xe, time_array, time_step, [Xe_Mx0, Xe_My0, Xe_Mz0], [Bx, By, Bz])
 plt.figure()
 plt.plot(time_array, ne_bes.M[2], time_array, xe_bes.M[2], time_array, he_bes.M[2])
 plt.show()
