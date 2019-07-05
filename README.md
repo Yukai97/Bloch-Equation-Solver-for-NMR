@@ -1,4 +1,4 @@
-# Bloch Equation Solver
+# Bloch Equations Solver
 This is a Bloch equation solver for Nuclear Magnetic Resonance (NMR) using Runge-Kutta methods.
 
 ### MATLAB Version
